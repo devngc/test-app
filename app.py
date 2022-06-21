@@ -3,6 +3,7 @@ import extra_streamlit_components as stx
 from page_0 import page_0
 from page_1 import page_1
 from page_2 import page_2
+from pathlib import Path
 
 step = stx.stepper_bar(
     steps=['page-1', 'page-2', 'page-3'],
@@ -16,7 +17,8 @@ if step == 0:
         st.session_state.month = month
     if month:
         st.session_state.month = month
+    st.session_state.vtkjs = Path('./assets/daylight_factor.vtkjs')
 elif step == 1:
-    page_1(st.session_state.month)
+    page_1(st.session_state.month, st.session_state.vtks)
 elif step == 2:
     page_2(st.session_state.month)
