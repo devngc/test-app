@@ -19,6 +19,6 @@ if step == 0:
         st.session_state.month = month
     st.session_state.vtkjs = Path('./assets/daylight_factor.vtkjs')
 elif step == 1:
-    page_1(st.session_state.month, st.session_state.vtks)
+    page_1(st.session_state.month, st.session_state.vtkjs)
 elif step == 2:
     page_2(st.session_state.month)
