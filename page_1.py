@@ -1,5 +1,7 @@
 import streamlit as st
 
 
-def page_1():
-    st.write(f'The month is {st.session_state.month}')
+def page_1(month):
+    st.write(f'The month is {month}')
+
+    st.write(st.session_state)

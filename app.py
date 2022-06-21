@@ -11,8 +11,12 @@ step = stx.stepper_bar(
 
 
 if step == 0:
-    page_0()
+    month = page_0()
+    if 'month' not in st.session_state:
+        st.session_state.month = month
+    if month:
+        st.session_state.month = month
 elif step == 1:
-    page_1()
+    page_1(st.session_state.month)
 elif step == 2:
-    page_2()
+    page_2(st.session_state.month)
