@@ -1,13 +1,13 @@
 import streamlit as st
-from pollination_streamlit_viewer import viewer
+from viewer import render
 
 
 def results(design_options, status):
 
     if status == 'complete':
-        option_num = st.text_input('Option number', value='1')
+        option = st.text_input('Option number', value='1')
         try:
-            viewer(key='results', content=design_options[int(option_num)].read_bytes())
+            render(design_options[int(option)], key='results')
         except (ValueError, KeyError):
             st.error('Not a valid option number.')
             return

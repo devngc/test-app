@@ -1,5 +1,5 @@
 import streamlit as st
-from pollination_streamlit_viewer import viewer
+from viewer import render
 
 
 def options(model_folder):
@@ -11,4 +11,9 @@ def options(model_folder):
             design_options[count] = file_path
 
     st.write(design_options)
+
+    option = st.radio('Select design option', list(design_options.keys()))
+
+    render(design_options[option], key='options')
+
     return design_options
